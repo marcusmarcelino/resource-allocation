@@ -23,8 +23,4 @@ public class AllocationId implements Serializable {
   @EqualsAndHashCode.Include
   @Column(name = "resource_id")
   private Long resource;
-
-  @EqualsAndHashCode.Include
-  @Column(name = "type")
-  private String type;
 }

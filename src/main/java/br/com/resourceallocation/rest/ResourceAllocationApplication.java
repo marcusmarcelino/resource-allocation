@@ -40,12 +40,14 @@ public class ResourceAllocationApplication {
 			project.setEndDate(LocalDateTime.of(2022, 11, 1, 14, 0, 0));
 			Project createdProject = createProject.execute(project);
 
-			Collaborator collaborator = new Collaborator();
-			collaborator.setName("Marcus");
-			Collaborator createdCollaborator = createCollaborator.execute(collaborator);
+			Collaborator resource = new Collaborator();
+			resource.setName("Marcus");
+			Collaborator createdResource = createCollaborator.execute(resource);
 
 			Allocation allocation = new Allocation();
-			allocation.setId(new AllocationId(createdProject.getId(), createdCollaborator.getId(), "collaborator"));
+			allocation.setId(new AllocationId());
+			allocation.setProject(createdProject);
+			allocation.setResource(createdResource);
 			allocation.setStartDate(LocalDateTime.now());
 			allocation.setEndDate(LocalDateTime.of(2022, 11, 1, 21, 0, 0));
 			createAllocation.execute(allocation);
