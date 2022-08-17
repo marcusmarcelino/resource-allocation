@@ -14,7 +14,6 @@ import br.com.resourceallocation.rest.modules.collaborator.entities.Collaborator
 import br.com.resourceallocation.rest.modules.collaborator.services.CreateCollaboratorService;
 import br.com.resourceallocation.rest.modules.project.entities.Project;
 import br.com.resourceallocation.rest.modules.project.services.CreateProjectService;
-import br.com.resourceallocation.rest.modules.resource.entities.Resource;
 import br.com.resourceallocation.rest.modules.user.entities.Role;
 import br.com.resourceallocation.rest.modules.user.services.CreateRoleService;
 
@@ -25,7 +24,7 @@ public class ResourceAllocationApplication {
 		SpringApplication.run(ResourceAllocationApplication.class, args);
 	}
 
-	// @Bean
+	@Bean
 	CommandLineRunner run(
 			CreateRoleService createRole,
 			CreateProjectService createProject,
