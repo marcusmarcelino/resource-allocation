@@ -40,8 +40,7 @@ public class ResourceAllocationApplication {
 			project.setEndDate(LocalDateTime.of(2022, 11, 1, 14, 0, 0));
 			Project createdProject = createProject.execute(project);
 
-			Collaborator resource = new Collaborator();
-			resource.setName("Marcus");
+			Collaborator resource = new Collaborator("Marcus", "marcus@mail.com");
 			Collaborator createdResource = createCollaborator.execute(resource);
 
 			Allocation allocation = new Allocation();
