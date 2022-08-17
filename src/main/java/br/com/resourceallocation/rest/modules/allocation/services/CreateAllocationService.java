@@ -1,7 +1,5 @@
 package br.com.resourceallocation.rest.modules.allocation.services;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +12,6 @@ public class CreateAllocationService {
   private AllocationJPARepository repository;
 
   public Allocation execute(Allocation allocation) {
-    Optional<Allocation> existAllocation = repository.findById(allocation.getId());
-
-    if (!existAllocation.isEmpty()) {
-      throw new Error("Allocation already exists!");
-    }
-
     return repository.save(allocation);
   }
 }
