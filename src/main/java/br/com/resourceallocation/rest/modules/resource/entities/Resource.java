@@ -19,7 +19,7 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Table(name = "resource")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "type_resource")
 public class Resource {
 

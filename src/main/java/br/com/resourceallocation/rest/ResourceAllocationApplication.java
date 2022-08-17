@@ -14,6 +14,7 @@ import br.com.resourceallocation.rest.modules.collaborator.entities.Collaborator
 import br.com.resourceallocation.rest.modules.collaborator.services.CreateCollaboratorService;
 import br.com.resourceallocation.rest.modules.project.entities.Project;
 import br.com.resourceallocation.rest.modules.project.services.CreateProjectService;
+import br.com.resourceallocation.rest.modules.resource.entities.Resource;
 import br.com.resourceallocation.rest.modules.user.entities.Role;
 import br.com.resourceallocation.rest.modules.user.services.CreateRoleService;
 
@@ -24,7 +25,7 @@ public class ResourceAllocationApplication {
 		SpringApplication.run(ResourceAllocationApplication.class, args);
 	}
 
-	@Bean
+	// @Bean
 	CommandLineRunner run(
 			CreateRoleService createRole,
 			CreateProjectService createProject,
@@ -40,8 +41,7 @@ public class ResourceAllocationApplication {
 			project.setEndDate(LocalDateTime.of(2022, 11, 1, 14, 0, 0));
 			Project createdProject = createProject.execute(project);
 
-			Collaborator resource = new Collaborator();
-			resource.setName("Marcus");
+			Collaborator resource = new Collaborator("Marcus", "email");
 			Collaborator createdResource = createCollaborator.execute(resource);
 
 			Allocation allocation = new Allocation();

@@ -6,11 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import br.com.resourceallocation.rest.modules.resource.entities.Resource;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "collaborator")
 @DiscriminatorValue("collaborator")
