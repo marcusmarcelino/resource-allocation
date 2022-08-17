@@ -1,7 +1,6 @@
 package br.com.resourceallocation.rest.modules.material.entities;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -16,8 +15,7 @@ import lombok.Setter;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "material")
-@DiscriminatorValue("material")
+@Table(name = "materials")
 public class Material extends Resource {
   @Column(name = "description")
   private String description;

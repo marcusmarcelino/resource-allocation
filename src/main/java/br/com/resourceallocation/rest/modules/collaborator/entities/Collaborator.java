@@ -1,7 +1,6 @@
 package br.com.resourceallocation.rest.modules.collaborator.entities;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -16,8 +15,7 @@ import lombok.Setter;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "collaborator")
-@DiscriminatorValue("collaborator")
+@Table(name = "collaborators")
 public class Collaborator extends Resource {
   @Column(name = "name")
   private String name;

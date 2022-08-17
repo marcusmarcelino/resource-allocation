@@ -3,7 +3,6 @@ package br.com.resourceallocation.rest.modules.resource.entities;
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,13 +18,12 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Table(name = "resource")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type_resource")
-public class Resource {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Resource {
 
   @Id
   @EqualsAndHashCode.Include
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
   @Column(name = "hour_cost")

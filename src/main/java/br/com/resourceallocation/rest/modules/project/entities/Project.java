@@ -19,12 +19,6 @@ public class Project {
   @EqualsAndHashCode.Include
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  // @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequencia")
-  // @SequenceGenerator(name = "sequencia", sequenceName = "seq_projeto")
-
-  // @GeneratedValue(strategy = GenerationType.TABLE, generator = "tabela")
-  // @TableGenerator(name = "tabela", table = "identificador", pkColumnName =
-  // "nome_chave", pkColumnValue = "projeto", valueColumnName = "proximo_valor")
   @Column(name = "id", unique = true, nullable = false)
   private Long id;
 
